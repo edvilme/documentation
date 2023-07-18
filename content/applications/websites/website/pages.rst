@@ -4,34 +4,85 @@
 Pages
 =====
 
-Odoo allows you to create pages for your website and customize them to your need, be it in its
-content or appearance.
+Odoo allows you to create pages for your website and customize their contents and appearance to your
+needs.
 
-Create a page
+Page creation
 =============
-There are **two ways** to create a page: from the **frontend** and from the **backend**.
 
-From the **frontend**: open the **Website** app and log into your site if necessary. Then, click on
-:guilabel:`+ New` in the top-right corner, and select :guilabel:`Page`. Enter a **page title**,
-select whether the page should appear in the **bar menu** by enabling or disabling :guilabel:`Add to
-menu`, and click :guilabel:`Create`.
+Website pages can be created from the **frontend** and from the **backend**. To create a new website
+page, proceed as follows:
 
-.. example::
-   The bar where your page(s) appear.
+  #. - Either open the **Website** app, click :guilabel:`+ New` in the top-right corner, then select
+       :guilabel:`Page`;
+     - Or go to :menuselection:`Website --> Site --> Pages` and click :guilabel:`New`.
+  #. Enter a :guilabel`Page Title`; this title is used in the menu, as well as the page's URL.
+  #. Disable :guilabel:`Add to menu` if the page should not appear in the menu.
+  #. Click :guilabel:`Create`.
+  #. Customize the page's contents and appearance using the Website Builder, then click
+     :guilabel:`Save`.
+  #. :ref:`Publish <website/un-publish-page>` the page.
 
-   .. image:: pages/menu-bar.png
-      :alt: Menu bar where website pages appear.
+Page management
+===============
 
-From the **backend**: Open the **Website** app and log into your site if necessary. Then, go onto
-the page you wish to modify, click :guilabel:`Site`, and in the **This page** section, select
-:guilabel:`Properties`. From here, you have access to **two tabs**:
+.. _website/un-publish-page:
 
-:guilabel:`Name`:
+Publishing/unpublishing pages
+-----------------------------
 
-- :guilabel:`Page Name`: You can rename the page if desired;
-- :guilabel:`Page URL`: You can change the **URL** of the page if desired.
+To publish or unpublish a page, toggle the switch in the upper-right corner from
+:guilabel:`Unpublished` to :guilabel: `Published`, or vice versa.
 
-:guilabel:`Publish`:
+.. image:: pages/un-published_toggle.png
+   :alt: Unpublished/Published toggle
+
+.. tip::
+   You can also:
+
+    - publish/unpublish a page from the :ref:`page properties <website/page_properties>`;
+    - publish/unpublish several pages: Go to :menuselection:`Website --> Site --> Pages`, select the
+      pages, then, in the :guilable:`Action` menu, select :guilabel:`Publish` or
+      :guilabel:`Unpublish`.
+
+.. _website/page_properties:
+
+Homepage
+-------
+
+By default, when you create a website, Odoo creates a homepage for it with the Page Title "Home" and
+the Page URL "/". However, you can define any page as your homepage if you want to. To define a page
+as your homepage
+
+- Go to properties
+- or go to settings
+
+NEXT: test what happens when you create website: is the homepage (url /) automatically created?
+If so, mention that + explain how you can use another page (in settings + in properties)
+
+You can define a dedicated homepage for you website, or use any other page as the homepage.
+
+To define
+
+
+
+Page properties
+---------------
+
+To modify a page's properties, access the page you wish to modify, then go to
+:menuselection:`Website --> Site --> Properties`.
+
+The :guilabel:`Name` tab allows you to:
+
+- rename the page using the :guilabel:`Page Name` field;
+- modify the :guilabel:`Page URL`. In this case, you can redirect the old URL to the new one. To do
+  so, toggle the :guilabel:`Redirect Old URL` switch, then select the :guilabel:`Type` of
+  redirection.
+
+  .. image:: pages/page-redirection.png
+     :alt: Redirect old URL
+
+You can further adapt the page's properties in the :guilabel:`Publish`: tab:
 
 - :guilabel:`Show in Top Menu`: Enable if you want the page to appear in the **bar menu** at the
   top;
@@ -53,27 +104,23 @@ you can access *some* of those options by going to :menuselection:`Website --> S
 .. seealso::
    :doc:`pages/seo`
 
-.. _website/customization:
+
+
+Duplicating pages
+
+redirecting pages
+
+Deleting pages
+
+- Redirect instead of delete
+- the page will be removed from the menu,
+- need to update links (delete page window lists all links referring to the page so you can update
+them)
 
 Customization
 ~~~~~~~~~~~~~
 
-You can customize both new and already existing pages through the website builder. When on a page,
-click the :guilabel:`🖉 Edit` button to access the customization options. You can add **images**,
-**text**, etc. by drag-and-dropping the **building blocks** found under the :guilabel:`Blocks`
-column onto the page. Once placed onto the page, building blocks and other elements can be
-customized further.
-
-Customization is **contextual** and specific to each page and block, meaning content-related
-customization only applies to the page being edited. To customize a building block or menu, simply
-click on it while having the website builder *open*. Note that menus or building block can have
-customization options specific to their nature or context, and therefore each element may have
-options available only for that element. To access these customization options, click the
-:guilabel:`Customize` column.
-
-.. note::
-   While the :guilabel:`Blocks` and :guilabel:`Customize` columns are page-specific, the
-   :guilabel:`Theme` column is website-wide.
+Y
 
 .. toctree::
    :titlesonly:
