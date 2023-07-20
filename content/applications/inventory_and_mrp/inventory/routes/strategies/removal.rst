@@ -35,14 +35,19 @@ have an effect on which products are taken, from where, and when.
    :align: center
    :alt: Empty stock waiting for deliveries at the docks.
 
-In this example, vendor trucks unload pallets of goods at the docks. Then, operators scan the
+In this example above, vendor trucks unload pallets of goods at the docks. Then, operators scan the
 products in the receiving area, with the reception date and expiration date (if applicable). After
 that, products are stored in their respective locations.
 
-In Odoo, receiving products is done either in the *Inventory* or *Barcode* app. In either app, in
-the default kanban view, click :guilabel:`Receipts`, then, click on the individual receipt. Next, in
-the *Inventory* app, click :guilabel:`Edit`, then enter the received quantity in the
-:guilabel:`Done` column. Finally, click :guilabel:`Validate` to receive the products.
+In Odoo, receive products by navigating to the :menuselection:`Inventory` application, and in the
+kanban view, click on either the :guilabel:`Receipts` heading or ::guilabel:`# TO PROCESS` button.
+On the :guilabel:`Receipts` dashboard, find and click on the individual receipt which will open the
+warehouse intake form. Click :guilabel:`Edit`, and then enter the received quantity in the
+:guilabel:`Done` column. To finish, :guilabel:`Validate` to receive the products and register them
+in the Odoo database.
+
+.. tip::
+   Receiving products can also be done within the Odoo *Barcode* application.
 
 If using the *Barcode* app, scan the product(s), update the quantity, and finally, click
 :guilabel:`Validate`. After products are received in Odoo, the products can be moved to their
@@ -72,24 +77,22 @@ How each removal strategy works
 ===============================
 
 Removal strategies determine which products are taken from the warehouse when orders are confirmed.
-This is why selecting the correct removal strategies to best suit the needs of the warehouse is
-important.
 
 First In, First Out (FIFO)
 --------------------------
 
-When using a :guilabel:`First In, First Out (FIFO)` strategy, a demand for a product triggers a
-removal rule, which requests a transfer for the lot/serial number that entered the stock first (have
+When using a :guilabel:`First In, First Out (FIFO)` strategy, demand for a product triggers a
+removal rule, which requests a transfer for the lot/serial number that entered the stock first (and therefore, has
 been in stock for the longest time).
 
-For example, imagine there are three lots of nails in the warehouse. Those three have the following
-lot numbers: 00001, 00002, 00003, each with five boxes of nails in it.
+For example, imagine there are three lots of nails in the warehouse, and have the corresponding:
+lot numbers: 00001, 00002, 00003. Each lot has five boxes of nails in it.
 
-Lot 00001 entered the stock on May 23, lot 00002 on May 25, and lot 00003 on June 1. A customer
+Lot `00001` entered the stock on May 23, lot `00002` on May 25, and lot `00003` on June 1. A customer
 orders six boxes on June 11.
 
-Using the :abbr:`FIFO (First In, First Out)` removal strategy, a transfer is requested for the five
-boxes from lot 00001 and one of the boxes in lot 00002, since lot 00001 entered the stock first. The
+Using the :abbr:`FIFO (First In, First Out)` removal strategy, a transfer request will pick the five
+boxes from lot 00001 first, and then from the boxes in lot 00002, since lot 00001 entered the stock first. The
 box from lot 00002 is taken next because it has the oldest receipt date after lot 00001.
 
 .. image:: removal/fifo-nails-picking.png
@@ -107,7 +110,7 @@ Every time an order for products with the :abbr:`LIFO (Last In, First Out)` meth
 transfer is created for the lot/serial number that has most recently entered the stock (the **last**
 lot/serial number that entered the warehouse's inventory).
 
-.. Warning::
+.. warning::
    In many countries, the :abbr:`LIFO (Last In, First Out)` removal strategy in banned, since it can
    potentially result in old, expired, or obsolete products being delivered to customers.
 
